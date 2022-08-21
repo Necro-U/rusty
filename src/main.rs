@@ -5,6 +5,12 @@ struct User {
     sign_in: bool,
     count: i32,
 }
+
+impl User {
+    fn send_name(&self) {
+        println!("{}", self.name);
+    }
+}
 fn main() {
     let mut me = User {
         name: String::from("Ubeydullah"),
@@ -26,7 +32,8 @@ fn main() {
         e_mail: String::from("burak@miail.com"),
         ..you
     };
-    println!("{}", others.name);
+
+    others.send_name();
 }
 
 fn build_user(name: String, username: String, e_mail: String) -> User {
